@@ -692,7 +692,23 @@
         window.addEventListener('load', function() {
             try {
                 createChat({
-                    webhookUrl: 'https://leandrobfe.app.n8n.cloud/webhook/ffcf29b6-19e9-40fd-81a6-132910560043/chat'
+                    webhookUrl: 'https://leandrobfe.app.n8n.cloud/webhook/ffcf29b6-19e9-40fd-81a6-132910560043/chat',
+                    initialMessages: [
+                        'Welcome! 👋',
+                        'My name is Leo, How can I help you with AI solutions?'
+                        ],
+                    i18n: {
+                        en: {
+                            title: 'Leandro AI Assistant',
+                            getStarted: 'New Conversation',
+                            inputPlaceholder: 'Type your message...',
+                        },
+                        'pt-BR': {
+                            title: 'Assistente Leandro AI',
+                            getStarted: 'Nova Conversa',
+                            inputPlaceholder: 'Digite sua mensagem...',
+                        }
+                    }
                 });
             } catch (error) {
                 console.log('Chat widget could not be loaded:', error);

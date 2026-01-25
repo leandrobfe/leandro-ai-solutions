@@ -1,0 +1,29 @@
+{
+  "name": "leandro-ai-solutions",
+  "version": "1.0.0",
+  "description": "Leandro AI Solutions - AI Consulting Services Website",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "ai",
+    "consulting",
+    "automation"
+  ],
+  "author": "Leandro",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jsdom": "^24.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true,
+    "collectCoverageFrom": [
+      "script.js"
+    ]
+  }
+}

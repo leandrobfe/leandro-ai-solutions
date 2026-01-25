@@ -90,45 +90,7 @@
 
     <section class="reviews">
         <div class="container">
-            <div class="reviews-header">
-                <h2 data-i18n="reviews-title">Client Reviews</h2>
-                <button onclick="showAddReview()" class="btn-primary">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-                    </svg>
-                    <span data-i18n="btn-add-review">Add Review</span>
-                </button>
-            </div>
-
-            <div id="addReviewForm" class="add-review-form hidden">
-                <h3 data-i18n="add-review-form-title">Add New Review</h3>
-                <div class="form-group">
-                    <input type="text" id="newName" placeholder="Name" class="form-input" data-i18n-placeholder="placeholder-name">
-                </div>
-                <div class="form-group">
-                    <input type="text" id="newCompany" placeholder="Company" class="form-input" data-i18n-placeholder="placeholder-company">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="label-rating">Rating: </label>
-                    <select id="newRating" class="form-select">
-                        <option value="5">5 Stars</option>
-                        <option value="4">4 Stars</option>
-                        <option value="3">3 Stars</option>
-                        <option value="2">2 Stars</option>
-                        <option value="1">1 Star</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <textarea id="newText" placeholder="Review text" class="form-textarea" data-i18n-placeholder="placeholder-text"></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="newDate" placeholder="Date (e.g., January 2025)" class="form-input" data-i18n-placeholder="placeholder-date">
-                </div>
-                <div class="form-buttons">
-                    <button onclick="addReview()" class="btn-primary" data-i18n="btn-save">Save Review</button>
-                    <button onclick="hideAddReview()" class="btn-secondary" data-i18n="btn-cancel">Cancel</button>
-                </div>
-            </div>
+            <h2 data-i18n="reviews-title">Client Reviews</h2>
 
             <div id="reviewsGrid" class="reviews-grid"></div>
         </div>

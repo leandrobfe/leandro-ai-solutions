@@ -104,13 +104,6 @@ function renderReviews() {
     
     grid.innerHTML = langReviews.map(review => `
         <div class="review-card">
-            <div class="review-actions">
-                <button onclick="deleteReview(${review.id})" class="btn-delete">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
             <div class="stars">
                 ${Array(review.rating).fill('<svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>').join('')}
             </div>
@@ -122,50 +115,6 @@ function renderReviews() {
             </div>
         </div>
     `).join('');
-}
-
-function showAddReview() { 
-    document.getElementById('addReviewForm').classList.remove('hidden'); 
-}
-
-function hideAddReview() { 
-    document.getElementById('addReviewForm').classList.add('hidden'); 
-    clearForm(); 
-}
-
-function clearForm() {
-    document.getElementById('newName').value = '';
-    document.getElementById('newCompany').value = '';
-    document.getElementById('newRating').value = '5';
-    document.getElementById('newText').value = '';
-    document.getElementById('newDate').value = '';
-}
-
-function addReview() {
-    const name = document.getElementById('newName').value;
-    const text = document.getElementById('newText').value;
-    if (name && text) {
-        const newEntry = {
-            id: Date.now(),
-            name,
-            company: document.getElementById('newCompany').value,
-            rating: parseInt(document.getElementById('newRating').value),
-            text,
-            date: document.getElementById('newDate').value
-        };
-        reviews[currentLang].push(newEntry);
-        renderReviews();
-        hideAddReview();
-    } else {
-        alert(translations[currentLang]['alert-fill']);
-    }
-}
-
-function deleteReview(id) {
-    if (confirm(translations[currentLang]['confirm-delete'])) {
-        reviews[currentLang] = reviews[currentLang].filter(r => r.id !== id);
-        renderReviews();
-    }
 }
 
 // Initialize

@@ -23,7 +23,7 @@ Professional website for Leandro AI Solutions - AI Consulting Services
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/leandro-ai-solutions.git
+git clone https://github.com/leandrobfe/leandro-ai-solutions.git
 ```
 
 2. Navigate to the project folder:

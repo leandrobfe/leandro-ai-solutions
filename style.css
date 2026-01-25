@@ -19,32 +19,84 @@ body {
 /* Language Switcher */
 .language-picker {
     position: absolute;
-    top: 1rem;
+    top: 1.5rem;
     right: 1.5rem;
     z-index: 10;
 }
 
 .language-picker select {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 0.4rem 0.8rem;
-    border-radius: 0.375rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1e40af;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    padding-right: 2rem;
+    border-radius: 0.5rem;
     cursor: pointer;
     font-size: 0.875rem;
+    font-weight: 500;
     outline: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231e40af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.2rem;
+}
+
+.language-picker select:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.2);
+}
+
+.language-picker select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
 }
 
 .language-picker select option {
-    background: #1e40af;
-    color: white;
+    background: #ffffff;
+    color: #1e40af;
+    padding: 0.5rem;
 }
 
 /* Header */
 .header {
-    background: linear-gradient(to right, #2563eb, #1e40af);
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #1e40af 100%);
     color: white;
-    padding: 5rem 0;
+    padding: 6rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(147, 197, 253, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(96, 165, 250, 0.2) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #60a5fa, #a5b4fc, #60a5fa);
+}
+
+.header .container {
+    position: relative;
+    z-index: 1;
 }
 
 .header-content {
@@ -56,29 +108,43 @@ body {
 }
 
 .profile-photo {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: 4px solid white;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 5px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 
+        0 0 0 5px rgba(96, 165, 250, 0.3),
+        0 25px 50px -12px rgba(0, 0, 0, 0.25);
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 0 8px rgba(96, 165, 250, 0.4),
+        0 30px 60px -15px rgba(0, 0, 0, 0.3);
 }
 
 .header h1 {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 3.5rem;
+    font-weight: 800;
     margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.02em;
 }
 
 .header p {
-    font-size: 1.25rem;
-    color: #bfdbfe;
+    font-size: 1.35rem;
+    color: #dbeafe;
     max-width: 42rem;
+    line-height: 1.7;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Services */
 .services {
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 
 .services h2 {
@@ -97,19 +163,34 @@ body {
 
 .service-card {
     background: white;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
+    padding: 2rem;
+    border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
 }
 
 .service-card:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    border-color: #3b82f6;
 }
 
 .service-icon {
     color: #2563eb;
     margin-bottom: 1rem;
+    background: #eff6ff;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon svg {
+    width: 32px;
+    height: 32px;
 }
 
 .service-card h3 {
@@ -126,7 +207,7 @@ body {
 
 /* Reviews */
 .reviews {
-    padding: 4rem 0;
+    padding: 5rem 0;
     background: #f9fafb;
 }
 
@@ -146,15 +227,22 @@ body {
 
 .review-card {
     background: white;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
+    padding: 2rem;
+    border-radius: 1rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     position: relative;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15);
 }
 
 .stars {
     display: flex;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 0.25rem;
 }
 
 .star {
@@ -166,8 +254,10 @@ body {
 
 .review-text {
     color: #374151;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-style: italic;
+    line-height: 1.7;
+    font-size: 1rem;
 }
 
 .review-footer {
@@ -178,25 +268,47 @@ body {
 .review-name {
     font-weight: 600;
     color: #1f2937;
+    font-size: 1rem;
 }
 
 .review-company {
     font-size: 0.875rem;
     color: #4b5563;
+    margin-top: 0.25rem;
 }
 
 .review-date {
     font-size: 0.75rem;
     color: #6b7280;
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
 }
 
 /* Contact */
 .contact {
-    padding: 4rem 0;
-    background: linear-gradient(to right, #2563eb, #1e40af);
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
     color: white;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 90%, rgba(96, 165, 250, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, rgba(147, 197, 253, 0.2) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.contact .container {
+    position: relative;
+    z-index: 1;
 }
 
 .contact h2 {
@@ -207,7 +319,7 @@ body {
 
 .contact p {
     font-size: 1.25rem;
-    color: #bfdbfe;
+    color: #dbeafe;
     margin-bottom: 2rem;
     max-width: 48rem;
     margin-left: auto;
@@ -217,17 +329,20 @@ body {
 .btn-contact {
     background: white;
     color: #2563eb;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
+    padding: 1rem 2.5rem;
+    border-radius: 0.75rem;
     border: none;
     font-size: 1.125rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .btn-contact:hover {
     background: #eff6ff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
@@ -238,22 +353,90 @@ body {
     text-align: center;
 }
 
+.footer p {
+    color: #9ca3af;
+}
+
 /* Responsive */
 @media (min-width: 768px) {
     .header-content {
         flex-direction: row;
         text-align: left;
+        gap: 3rem;
+    }
+    
+    .header-content > div {
+        flex: 1;
     }
 }
 
 @media (max-width: 768px) {
+    .header {
+        padding: 5rem 0 4rem;
+    }
+    
     .header h1 {
         font-size: 2rem;
+    }
+    
+    .header p {
+        font-size: 1.1rem;
+    }
+    
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .language-picker {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .language-picker select {
+        padding: 0.6rem 1.2rem;
+        padding-right: 2.2rem;
+        font-size: 0.9rem;
     }
     
     .services h2,
     .reviews h2,
     .contact h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+    
+    .services,
+    .reviews,
+    .contact {
+        padding: 3rem 0;
+    }
+    
+    .service-card,
+    .review-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .services-grid,
+    .reviews-grid {
+        grid-template-columns: 1fr;
     }
 }
